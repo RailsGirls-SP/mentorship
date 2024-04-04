@@ -1,6 +1,6 @@
 {
-  "name": "Your Project Name",
-  "dockerComposeFile": "docker-compose.yml",
+  "name": "Mentorship",
+  "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {

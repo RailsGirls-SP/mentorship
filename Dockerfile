@@ -2,7 +2,7 @@ FROM ruby:3.3.0-slim as builder
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install wget -y --no-install-recommends\
-    && wget -qO- https://deb.nodesource.com/setup_18.x | bash - \
+    && wget -qO- https://deb.nodesource.com/setup_20.x | bash - \
     && wget -qO- https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get clean \

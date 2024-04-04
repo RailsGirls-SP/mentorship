@@ -62,7 +62,7 @@ services:
 
   db:
     hostname: postgres
-    image: postgres:13.2
+    image: postgres:16.2-alpine
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: ''
