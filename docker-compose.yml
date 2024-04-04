@@ -77,7 +77,3 @@ volumes:
   postgres:
   redis:
   bundle_path:
-
-networks:
-  mentorship:
-    external: true
