@@ -56,3 +56,5 @@ group :test do
   gem "shoulda-matchers"
   gem "rspec-sidekiq", "~> 4.1"
 end
+
+gem "devise", "~> 4.9"
