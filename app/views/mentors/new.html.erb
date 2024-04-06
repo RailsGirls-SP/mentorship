@@ -1,0 +1,26 @@
+<% if @mentor.errors.any? %>
+    <ul>
+      <% @mentor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+<% end %>
+
+<%= form_with model: @mentor do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br/>
+
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <br/>
+
+  <%= form.label :url %>
+  <%= form.text_field :url %>
+  <br/>
+
+  <%= form.label :bio %>
+  <%= form.text_area :bio, size: "60x10" %>
+  <br/>
+  <%= form.submit %>
+<% end %>
