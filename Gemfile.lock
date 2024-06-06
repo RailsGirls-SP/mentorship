@@ -76,7 +76,9 @@ GEM
       mutex_m
       tzinfo (~> 2.0)
     ast (2.4.2)
+    authentication-zero (2.16.36)
     base64 (0.2.0)
+    bcrypt (3.1.20)
     bigdecimal (3.1.7)
     bindex (0.8.1)
     bootsnap (1.18.3)
@@ -324,6 +326,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  authentication-zero (~> 2)
+  bcrypt (~> 3.1.7)
   bootsnap
   debug
   dotenv (~> 3.1)
