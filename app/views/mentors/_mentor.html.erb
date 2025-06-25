@@ -1,0 +1,37 @@
+<div id="<%= dom_id mentor %>">
+  <p>
+    <strong>Nome:</strong>
+    <%= mentor.name %>
+  </p>
+
+  <p>
+    <strong>Cargo atual:</strong>
+    <%= mentor.current_title %>
+  </p>
+
+  <p>
+    <strong>Empresa atual:</strong>
+    <%= mentor.current_company %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= mentor.email %>
+  </p>
+
+  <p>
+    <strong>Redes sociais:</strong>
+    <td><%= link_to "LinkedIn", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener" %></td>
+  </p>
+
+  <p>
+    <strong>Bio:</strong>
+    <%= mentor.bio %>
+  </p>
+
+  <p>
+    <strong>Tópicos de mentoria:</strong>
+    <%= format_mentorship_topics(mentor.mentorship_topics) %>
+  </p>
+
+</div>
