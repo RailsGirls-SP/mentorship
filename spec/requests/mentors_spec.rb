@@ -83,7 +83,7 @@ RSpec.describe "/mentors", type: :request do
         mentor = create(:mentor, name: "old name")
         new_name = "New Name"
 
-        patch mentor_url(mentor), params: { mentor: {name: new_name} }
+        patch mentor_url(mentor), params: { mentor: { name: new_name } }
 
         mentor.reload
         expect(mentor.name).to eq(new_name)
@@ -93,7 +93,7 @@ RSpec.describe "/mentors", type: :request do
         mentor = create(:mentor, name: "old name")
         new_name = "New Name"
 
-        patch mentor_url(mentor), params: { mentor: {name: new_name} }
+        patch mentor_url(mentor), params: { mentor: { name: new_name } }
 
         mentor.reload
         expect(response).to redirect_to(mentor_url(mentor))
@@ -105,7 +105,7 @@ RSpec.describe "/mentors", type: :request do
         mentor = create(:mentor, name: "old name")
         invalid_name = nil
 
-        patch mentor_url(mentor), params: { mentor: {name: invalid_name} }
+        patch mentor_url(mentor), params: { mentor: { name: invalid_name } }
 
         expect(response).to have_http_status(:unprocessable_entity)
       end

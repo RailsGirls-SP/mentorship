@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Mentor, type: :model do
   [
-    {input: "Cool Name", expected: "Cool Name", desc: "already formatted"},
-    {input: "cool name", expected: "Cool Name", desc: "downcased"},
-    {input: "   cOOl   nAMe  ", expected: "Cool Name", desc: "extra spaces"},
+    { input: "Cool Name", expected: "Cool Name", desc: "already formatted" },
+    { input: "cool name", expected: "Cool Name", desc: "downcased" },
+    { input: "   cOOl   nAMe  ", expected: "Cool Name", desc: "extra spaces" }
   ].each do |tc|
     it "normalizes name: #{tc[:desc]}" do
       mentor = described_class.new(name: tc[:input])
@@ -14,9 +14,9 @@ RSpec.describe Mentor, type: :model do
   end
 
   [
-    {input: "email@example.com", expected: "email@example.com", desc: "already formatted"},
-    {input: "  email   @example .com ", expected: "email@example.com", desc: "extra spaces"},
-    {input: "EMAIL@EXamp LE.COM", expected: "email@example.com", desc: "upcased"},
+    { input: "email@example.com", expected: "email@example.com", desc: "already formatted" },
+    { input: "  email   @example .com ", expected: "email@example.com", desc: "extra spaces" },
+    { input: "EMAIL@EXamp LE.COM", expected: "email@example.com", desc: "upcased" }
   ].each do |tc|
     it "normalizes email: #{tc[:desc]}" do
       mentor = described_class.new(email: tc[:input])
@@ -26,9 +26,9 @@ RSpec.describe Mentor, type: :model do
   end
 
   [
-    {input: "linkedin.com/mentorax", expected: "linkedin.com/mentorax", desc: "already formatted"},
-    {input: "  linkedin   .com/ mentorax  ", expected: "linkedin.com/mentorax", desc: "extra spaces"},
-    {input: "liNKEDin .COM/mentoraX", expected: "linkedin.com/mentorax", desc: "upcased"},
+    { input: "linkedin.com/mentorax", expected: "linkedin.com/mentorax", desc: "already formatted" },
+    { input: "  linkedin   .com/ mentorax  ", expected: "linkedin.com/mentorax", desc: "extra spaces" },
+    { input: "liNKEDin .COM/mentoraX", expected: "linkedin.com/mentorax", desc: "upcased" }
   ].each do |tc|
     it "normalizes linkedin url: #{tc[:desc]}" do
       mentor = described_class.new(linkedin_url: tc[:input])
@@ -38,10 +38,10 @@ RSpec.describe Mentor, type: :model do
   end
 
   [
-    {input: "ruby,rails", expected: "ruby,rails", desc: "already formatted"},
-    {input: "  ruby ,  rails    ", expected: "ruby,rails", desc: "extra spaces"},
-    {input: "ruBY, RAIls", expected: "ruby,rails", desc: "upcased"},
-    {input: "ruby on rails, ux design", expected: "ruby on rails,ux design", desc: "multiple words"},
+    { input: "ruby,rails", expected: "ruby,rails", desc: "already formatted" },
+    { input: "  ruby ,  rails    ", expected: "ruby,rails", desc: "extra spaces" },
+    { input: "ruBY, RAIls", expected: "ruby,rails", desc: "upcased" },
+    { input: "ruby on rails, ux design", expected: "ruby on rails,ux design", desc: "multiple words" }
   ].each do |tc|
     it "normalizes mentorship topics: #{tc[:desc]}" do
       mentor = described_class.new(mentorship_topics: tc[:input])
@@ -73,9 +73,9 @@ RSpec.describe Mentor, type: :model do
   end
 
   [
-    {attr: :linkedin_url, value: "invalid-url", valid: false, desc: "invalid URL format"},
-    {attr: :linkedin_url, value: "https://linkedin.com/mentorax", valid: true, desc: "valid URL format"},
-    {attr: :linkedin_url, value: "linkedin.com/mentorax", valid: true, desc: "valid URL format (without https)"}
+    { attr: :linkedin_url, value: "invalid-url", valid: false, desc: "invalid URL format" },
+    { attr: :linkedin_url, value: "https://linkedin.com/mentorax", valid: true, desc: "valid URL format" },
+    { attr: :linkedin_url, value: "linkedin.com/mentorax", valid: true, desc: "valid URL format (without https)" }
   ].each do |tc|
     it "validates #{tc[:attr]}: #{tc[:desc]}" do
       attributes = build(:mentor).attributes
@@ -84,7 +84,7 @@ RSpec.describe Mentor, type: :model do
       mentor = described_class.new(attributes)
 
       expect(mentor.valid?).to eq tc[:valid]
-      expect(mentor.errors[tc[:attr]]).to eq(["is invalid"]) unless tc[:valid]
+      expect(mentor.errors[tc[:attr]]).to eq([ "is invalid" ]) unless tc[:valid]
     end
   end
 end
