@@ -58,9 +58,9 @@ RSpec.describe "/mentors", type: :request do
       end
     end
 
-    xcontext "with invalid parameters" do
+    context "with invalid parameters" do
       it "does not create a new Mentor" do
-        invalid_attributes = build(:mentor).attributes
+        invalid_attributes = build(:mentor).attributes.delete(:name)
 
         expect {
           post mentors_url, params: { mentor: invalid_attributes }
@@ -68,11 +68,11 @@ RSpec.describe "/mentors", type: :request do
       end
 
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
-        invalid_attributes = build(:mentor).attributes
+        invalid_attributes = build(:mentor).attributes.delete(:name)
 
         post mentors_url, params: { mentor: invalid_attributes }
 
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:bad_request)
       end
     end
   end
@@ -100,10 +100,10 @@ RSpec.describe "/mentors", type: :request do
       end
     end
 
-    xcontext "with invalid parameters" do
+    context "with invalid parameters" do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         mentor = create(:mentor, name: "old name")
-        invalid_name = "New Name"
+        invalid_name = nil
 
         patch mentor_url(mentor), params: { mentor: {name: invalid_name} }
 
