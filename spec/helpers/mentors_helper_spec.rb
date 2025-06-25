@@ -1,15 +1,25 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the MentorsHelper. For example:
-#
-# describe MentorsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe MentorsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "formatting mentorship topics" do
+    it 'returns an empty string when given nil' do
+      expect(helper.format_mentorship_topics(nil)).to eq("")
+    end
+
+    it 'returns an empty string when given an empty string' do
+      expect(helper.format_mentorship_topics("")).to eq("")
+    end
+
+    it 'formats a single topic correctly' do
+      expect(helper.format_mentorship_topics("ruby")).to eq("Ruby")
+    end
+
+    it 'formats multiple topics, capitalizing each and adding space after commas' do
+      expect(helper.format_mentorship_topics("ruby,rails,ruby on rails")).to eq("Ruby, Rails, Ruby On Rails")
+    end
+
+    it 'handles extra spaces around topics' do
+      expect(helper.format_mentorship_topics("  ruby , rails ,  ruby on rails ")).to eq("Ruby, Rails, Ruby On Rails")
+    end
+  end
 end

@@ -5,7 +5,7 @@
 <h1>Mentoras</h1>
 
 <div id="mentors">
-  <table border="1">
+  <table border="1" cellpadding="10">
   <thead>
     <tr>
       <th>Nome</th>
@@ -22,7 +22,7 @@
         <td><%= mentor.name %></td>
         <td><%= mail_to mentor.email, target: "_blank" %></td>
         <td><%= link_to "LinkedIn", mentor.linkedin_url, target: "_blank", rel: "noopener" %></td>
-        <td><%= mentor.mentorship_topics %></td>
+        <td><%= format_mentorship_topics(mentor.mentorship_topics) %></td>
         <td><%= link_to "Mostrar mais", mentor %></td>
       </tr>
     <% end %>
