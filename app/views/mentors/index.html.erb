@@ -1,16 +1,33 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Mentors" %>
+<% content_for :title, "Mentoras" %>
 
-<h1>Mentors</h1>
+<h1>Mentoras</h1>
 
 <div id="mentors">
-  <% @mentors.each do |mentor| %>
-    <%= render mentor %>
-    <p>
-      <%= link_to "Show this mentor", mentor %>
-    </p>
-  <% end %>
+  <table border="1">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Redes Sociais</th>
+      <th>Tópicos de Mentoria</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <tbody>
+    <% @mentors.each do |mentor| %>
+      <tr>
+        <td><%= mentor.name %></td>
+        <td><%= mail_to mentor.email, target: "_blank" %></td>
+        <td><%= link_to "LinkedIn", mentor.linkedin_url, target: "_blank", rel: "noopener" %></td>
+        <td><%= mentor.mentorship_topics %></td>
+        <td><%= link_to "Mostrar mais", mentor %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
 </div>
 
-<%= link_to "New mentor", new_mentor_path %>
+<p><%= link_to "Nova mentora", new_mentor_path %></p>

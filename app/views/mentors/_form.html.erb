@@ -12,41 +12,57 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :name, style: "display: block" do %>
+      <strong>Nome:</strong> <small>(obrigatório)</small>
+    <% end %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :current_title, style: "display: block" %>
+    <%= form.label :current_title, style: "display: block" do %>
+      <strong>Cargo atual:</strong>
+    <% end %>
     <%= form.text_field :current_title %>
   </div>
 
   <div>
-    <%= form.label :current_company, style: "display: block" %>
+    <%= form.label :current_company, style: "display: block" do %>
+      <strong>Empresa atual:</strong>
+    <% end %>
     <%= form.text_field :current_company %>
   </div>
 
   <div>
-    <%= form.label :email, style: "display: block" %>
+    <%= form.label :email, style: "display: block" do %>
+      <strong>Email:</strong> <small>(obrigatório)</small>
+    <% end %>
     <%= form.text_field :email %>
   </div>
 
   <div>
-    <%= form.label :linkedin_url, style: "display: block" %>
+    <%= form.label :linkedin_url, style: "display: block" do %>
+      <strong>URL do LinkedIn:</strong>
+    <% end %>
     <%= form.text_field :linkedin_url %>
   </div>
 
   <div>
-    <%= form.label :bio, style: "display: block" %>
+    <%= form.label :bio, style: "display: block" do %>
+      <strong>Mini-bio:</strong>
+    <% end %>
     <%= form.textarea :bio %>
   </div>
 
   <div>
-    <%= form.label :mentorship_topics, style: "display: block" %>
+    <%= form.label :mentorship_topics, style: "display: block" do %>
+      <strong>Tópicos de mentoria:</strong>
+      <small>(separe cada tópico com vírgulas)</small>
+    <% end %>
+
     <%= form.textarea :mentorship_topics %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Salvar" %>
   </div>
 <% end %>
