@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mentor %>
+
+<div>
+  <%= link_to "Edit this mentor", edit_mentor_path(@mentor) %> |
+  <%= link_to "Back to mentors", mentors_path %>
+
+  <%= button_to "Destroy this mentor", @mentor, method: :delete %>
+</div>

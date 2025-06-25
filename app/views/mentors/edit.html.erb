@@ -1,0 +1,12 @@
+<% content_for :title, "Editing mentor" %>
+
+<h1>Editing mentor</h1>
+
+<%= render "form", mentor: @mentor %>
+
+<br>
+
+<div>
+  <%= link_to "Show this mentor", @mentor %> |
+  <%= link_to "Back to mentors", mentors_path %>
+</div>
