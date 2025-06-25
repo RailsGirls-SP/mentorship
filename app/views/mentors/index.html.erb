@@ -21,7 +21,7 @@
       <tr>
         <td><%= mentor.name %></td>
         <td><%= mail_to mentor.email, target: "_blank" %></td>
-        <td><%= link_to "LinkedIn", mentor.linkedin_url, target: "_blank", rel: "noopener" %></td>
+        <td><%= link_to "LinkedIn", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener" %></td>
         <td><%= format_mentorship_topics(mentor.mentorship_topics) %></td>
         <td><%= link_to "Mostrar mais", mentor %></td>
       </tr>
