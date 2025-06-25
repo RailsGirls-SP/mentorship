@@ -31,9 +31,9 @@ RSpec.describe Mentor, type: :model do
     {input: "liNKEDin .COM/mentoraX", expected: "linkedin.com/mentorax", desc: "upcased"},
   ].each do |tc|
     it "normalizes linkedin url: #{tc[:desc]}" do
-      mentor = described_class.new(email: tc[:input])
+      mentor = described_class.new(linkedin_url: tc[:input])
 
-      expect(mentor.email).to eq(tc[:expected])
+      expect(mentor.linkedin_url).to eq(tc[:expected])
     end
   end
 
@@ -41,11 +41,12 @@ RSpec.describe Mentor, type: :model do
     {input: "ruby,rails", expected: "ruby,rails", desc: "already formatted"},
     {input: "  ruby ,  rails    ", expected: "ruby,rails", desc: "extra spaces"},
     {input: "ruBY, RAIls", expected: "ruby,rails", desc: "upcased"},
+    {input: "ruby on rails, ux design", expected: "ruby on rails,ux design", desc: "multiple words"},
   ].each do |tc|
     it "normalizes mentorship topics: #{tc[:desc]}" do
-      mentor = described_class.new(email: tc[:input])
+      mentor = described_class.new(mentorship_topics: tc[:input])
 
-      expect(mentor.email).to eq(tc[:expected])
+      expect(mentor.mentorship_topics).to eq(tc[:expected])
     end
   end
 

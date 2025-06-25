@@ -1,8 +1,10 @@
 class Mentor < ApplicationRecord
-  normalizes :name, with: ->(e) { e.strip.downcase.gsub(/\s+/, " ").titleize }
+  normalizes :name, with: ->(n) { n.strip.downcase.gsub(/\s+/, " ").titleize }
   normalizes :email, with: ->(e) { e.strip.downcase.gsub(/\s+/, "") }
-  normalizes :linkedin_url, with: ->(e) { e.strip.downcase.gsub(/\s+/, "") }
-  normalizes :mentorship_topics, with: ->(e) { e.strip.downcase.gsub(/\s+/, "") }
+  normalizes :linkedin_url, with: ->(url) { url.strip.downcase.gsub(/\s+/, "") }
+  normalizes :mentorship_topics, with: ->(topics) {
+    topics.to_s.split(',').map { |t| t.strip.downcase.gsub(/\s+/, " ") }.join(',')
+  }
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
