@@ -81,7 +81,7 @@ RSpec.describe "/mentors", type: :request do
     context "with valid parameters" do
       it "updates the requested mentor" do
         mentor = create(:mentor, name: "old name")
-        new_name = "new name"
+        new_name = "New Name"
 
         patch mentor_url(mentor), params: { mentor: {name: new_name} }
 
@@ -91,7 +91,7 @@ RSpec.describe "/mentors", type: :request do
 
       it "redirects to the mentor" do
         mentor = create(:mentor, name: "old name")
-        new_name = "new name"
+        new_name = "New Name"
 
         patch mentor_url(mentor), params: { mentor: {name: new_name} }
 
@@ -103,7 +103,7 @@ RSpec.describe "/mentors", type: :request do
     xcontext "with invalid parameters" do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         mentor = create(:mentor, name: "old name")
-        invalid_name = "new name"
+        invalid_name = "New Name"
 
         patch mentor_url(mentor), params: { mentor: {name: invalid_name} }
 

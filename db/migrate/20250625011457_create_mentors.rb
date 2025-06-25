@@ -11,5 +11,6 @@ class CreateMentors < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
+    add_index :mentors, :email, unique: true
   end
 end
