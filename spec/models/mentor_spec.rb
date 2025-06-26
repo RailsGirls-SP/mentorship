@@ -75,7 +75,9 @@ RSpec.describe Mentor, type: :model do
   [
     { attr: :linkedin_url, value: "invalid-url", valid: false, desc: "invalid URL format" },
     { attr: :linkedin_url, value: "https://linkedin.com/mentorax", valid: true, desc: "valid URL format" },
-    { attr: :linkedin_url, value: "linkedin.com/mentorax", valid: true, desc: "valid URL format (without https)" }
+    { attr: :linkedin_url, value: "linkedin.com/mentorax", valid: true, desc: "valid URL format (without https)" },
+    { attr: :email, value: "invalid-email", valid: false, desc: "invalid email format" },
+    { attr: :email, value: "valid@email.com", valid: true, desc: "valid email" }
   ].each do |tc|
     it "validates #{tc[:attr]}: #{tc[:desc]}" do
       attributes = build(:mentor).attributes
