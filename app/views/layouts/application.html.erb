@@ -22,8 +22,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-gray-50 min-h-screen text-gray-900">
+    <header class="bg-white shadow">
+      <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        <a href="/" class="text-xl font-bold text-rose-900">Mentoria</a>
+      </div>
+    </header>
+    <main class="container mx-auto mt-16 px-4 flex flex-col">
       <%= yield %>
     </main>
   </body>

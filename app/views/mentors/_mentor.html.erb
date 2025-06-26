@@ -1,36 +1,36 @@
-<div id="<%= dom_id mentor %>">
-  <p>
-    <strong>Nome:</strong>
+<div id="<%= dom_id mentor %>" class="bg-white rounded-lg shadow p-6 mb-6">
+  <p class="mb-2">
+    <strong class="text-gray-700">Nome:</strong>
     <%= mentor.name %>
   </p>
 
-  <p>
-    <strong>Cargo atual:</strong>
+  <p class="mb-2">
+    <strong class="text-gray-700">Cargo atual:</strong>
     <%= mentor.current_title %>
   </p>
 
-  <p>
-    <strong>Empresa atual:</strong>
+  <p class="mb-2">
+    <strong class="text-gray-700">Empresa atual:</strong>
     <%= mentor.current_company %>
   </p>
 
-  <p>
-    <strong>Email:</strong>
+  <p class="mb-2">
+    <strong class="text-gray-700">Email:</strong>
     <%= mentor.email %>
   </p>
 
-  <p>
-    <strong>Redes sociais:</strong>
-    <td><%= link_to "LinkedIn", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener" %></td>
+  <p class="mb-2">
+    <strong class="text-gray-700">Redes sociais:</strong>
+    <%= link_to "LinkedIn", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener", class: "text-blue-600 hover:underline" %>
   </p>
 
-  <p>
-    <strong>Bio:</strong>
+  <p class="mb-2">
+    <strong class="text-gray-700">Bio:</strong>
     <%= mentor.bio %>
   </p>
 
   <p>
-    <strong>Tópicos de mentoria:</strong>
+    <strong class="text-gray-700">Tópicos de mentoria:</strong>
     <%= format_mentorship_topics(mentor.mentorship_topics) %>
   </p>
 

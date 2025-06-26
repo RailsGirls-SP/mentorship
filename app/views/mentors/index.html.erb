@@ -2,32 +2,31 @@
 
 <% content_for :title, "Mentoras" %>
 
-<h1>Mentoras</h1>
+<h1 class="text-3xl font-bold text-pink mb-6">Mentoras</h1>
 
 <div id="mentors">
-  <table border="1" cellpadding="10">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Redes Sociais</th>
-      <th>Tópicos de Mentoria</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <tbody>
-    <% @mentors.each do |mentor| %>
+  <table class="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden shadow mb-6">
+    <thead class="bg-gray-100">
       <tr>
-        <td><%= mentor.name %></td>
-        <td><%= mail_to mentor.email, target: "_blank" %></td>
-        <td><%= link_to "LinkedIn", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener" %></td>
-        <td><%= format_mentorship_topics(mentor.mentorship_topics) %></td>
-        <td><%= link_to "Mostrar mais", mentor %></td>
+        <th class="py-2 px-4 text-left font-semibold">Nome</th>
+        <th class="py-2 px-4 text-left font-semibold">Email</th>
+        <th class="py-2 px-4 text-left font-semibold">Redes Sociais</th>
+        <th class="py-2 px-4 text-left font-semibold">Tópicos de Mentoria</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
+    </thead>
+    <tbody>
+      <% @mentors.each do |mentor| %>
+        <tr class="border-t hover:bg-gray-50">
+          <td class="py-2 px-4"><%= mentor.name %></td>
+          <td class="py-2 px-4"><%= mail_to mentor.email, target: "_blank" %></td>
+          <td class="py-2 px-4"><%= link_to "LinkedIn", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener", class: "text-blue-600 hover:underline" %></td>
+          <td class="py-2 px-4"><%= format_mentorship_topics(mentor.mentorship_topics) %></td>
+          <td class="py-2 px-4"><%= link_to "Mostrar mais", mentor, class: "text-rose-600 hover:underline" %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>
 
-<p><%= link_to "Nova mentora", new_mentor_path %></p>
+<p><%= link_to "Nova mentora", new_mentor_path, class: "inline-block bg-rose-900 hover:bg-rose-900 text-white font-semibold py-2 px-4 rounded transition" %></p>

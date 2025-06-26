@@ -1,12 +1,12 @@
 <% content_for :title, "Editar mentora" %>
 
-<h1>Editar mentora</h1>
+<div class="flex items-center justify-between mb-4">
+  <h1 class="text-2xl font-semibold">Editar mentora</h1>
+  <div class="flex gap-4 items-center">
+    <%= link_to "Mostrar", @mentor %>
+    <span>|</span>
+    <%= link_to "Listar mentoras", mentors_path %>
+  </div>
+</div>
 
 <%= render "form", mentor: @mentor %>
-
-<br>
-
-<div>
-  <%= link_to "Mostrar", @mentor %> |
-  <%= link_to "Listar mentoras", mentors_path %>
-</div>

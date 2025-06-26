@@ -1,9 +1,8 @@
 <%= form_with(model: mentor) do |form| %>
   <% if mentor.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(mentor.errors.count, "error") %> prohibited this mentor from being saved:</h2>
-
-      <ul>
+    <div class="mb-4 p-4 bg-red-100 text-red-700 rounded">
+      <h2 class="font-bold mb-2"><%= pluralize(mentor.errors.count, "error") %> prohibited this mentor from being saved:</h2>
+      <ul class="list-disc pl-5">
         <% mentor.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,58 +10,57 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" do %>
+  <div class="mb-4">
+    <%= form.label :name, class: "block font-semibold mb-1" do %>
       <strong>Nome:</strong> <small>(obrigatório)</small>
     <% end %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink" %>
   </div>
 
-  <div>
-    <%= form.label :current_title, style: "display: block" do %>
+  <div class="mb-4">
+    <%= form.label :current_title, class: "block font-semibold mb-1" do %>
       <strong>Cargo atual:</strong>
     <% end %>
-    <%= form.text_field :current_title %>
+    <%= form.text_field :current_title, class: "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink" %>
   </div>
 
-  <div>
-    <%= form.label :current_company, style: "display: block" do %>
+  <div class="mb-4">
+    <%= form.label :current_company, class: "block font-semibold mb-1" do %>
       <strong>Empresa atual:</strong>
     <% end %>
-    <%= form.text_field :current_company %>
+    <%= form.text_field :current_company, class: "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink" %>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" do %>
+  <div class="mb-4">
+    <%= form.label :email, class: "block font-semibold mb-1" do %>
       <strong>Email:</strong> <small>(obrigatório)</small>
     <% end %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink" %>
   </div>
 
-  <div>
-    <%= form.label :linkedin_url, style: "display: block" do %>
+  <div class="mb-4">
+    <%= form.label :linkedin_url, class: "block font-semibold mb-1" do %>
       <strong>URL do LinkedIn:</strong>
     <% end %>
-    <%= form.text_field :linkedin_url %>
+    <%= form.text_field :linkedin_url, class: "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink" %>
   </div>
 
-  <div>
-    <%= form.label :bio, style: "display: block" do %>
+  <div class="mb-4">
+    <%= form.label :bio, class: "block font-semibold mb-1" do %>
       <strong>Mini-bio:</strong>
     <% end %>
-    <%= form.textarea :bio %>
+    <%= form.text_area :bio, class: "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink" %>
   </div>
 
-  <div>
-    <%= form.label :mentorship_topics, style: "display: block" do %>
+  <div class="mb-4">
+    <%= form.label :mentorship_topics, class: "block font-semibold mb-1" do %>
       <strong>Tópicos de mentoria:</strong>
       <small>(separe cada tópico com vírgulas)</small>
     <% end %>
-
-    <%= form.textarea :mentorship_topics %>
+    <%= form.text_area :mentorship_topics, class: "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink" %>
   </div>
 
   <div>
-    <%= form.submit "Salvar" %>
+    <%= form.submit "Salvar", class: "bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2 px-4 rounded transition" %>
   </div>
 <% end %>
