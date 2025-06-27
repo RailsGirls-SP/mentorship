@@ -28,18 +28,38 @@ Esse desafio consiste em páginas para **gestão de cadastro de mentoradas**: pr
 
 Sugerimos que as mentoradas (`Mentee` é um bom nome) tenham: nome, cargo atual, empresa atual, email, linkedin e mini-bio.
 
+| Listar    | Criar      | Mostrar      | Editar      |
+| --------- | ---------- |------------- | ----------- |
+| <img width="572" alt="image" src="https://github.com/user-attachments/assets/ef150e6a-94a3-4739-aca9-59b69ac39411" /> | <img width="572" alt="image" src="https://github.com/user-attachments/assets/f939def5-abb6-4dfc-8671-ce01f02ce578" /> | <img width="572" alt="image" src="https://github.com/user-attachments/assets/d418790c-8739-4109-9d5d-8dd2e27b9177" /> | <img width="572" alt="image" src="https://github.com/user-attachments/assets/8cec01e7-1a25-432e-bb8b-a49bfd3120d7" /> |
+> deleção não tem imagem, mas tem links para essa ação em algumas das telas
+
 ### >> Desafio 2: Conectar mentoras e mentoradas
 Não bastar ter cadastro de mentoras e mentoradas, né? Uma forma de conectá-las é mais do que necessária.
 
 Nesse desafio, precisamos criar duas novas funcionalidades:
 1. Buscar mentoras por habilidades: a partir de uma habilidade X, devemos buscar as mentoras que tem aquela habilidade, pois essa é a única forma de escolher uma mentora
-2. Conectar mentoras e mentoradas: após a busca, devemos conseguir selecionar uma mentora e uma mentorada e conectá-las. (Dica: aqui teremos um relacionamento _many-to-many_)
+
+     <img width="350" alt="image" src="https://github.com/user-attachments/assets/c5c7fc1d-97d9-4bd5-acae-0109d29e2d02" />
+1. Conectar mentoras e mentoradas: após a busca, devemos conseguir selecionar uma mentora e uma mentorada e conectá-las. (Dica: aqui teremos um relacionamento _many-to-many_)
+
+     <img width="350" alt="image" src="https://github.com/user-attachments/assets/b1ca512c-aa07-41b1-8839-5480d76c125b" />
+     <img width="350" alt="image" src="https://github.com/user-attachments/assets/3dd4da77-2f72-41ee-b909-45b8e52761a1" />
+
 
 ### >> Desafio 3: Login para mentoradas
 Sabe a página que você acabou de fazer para conectar mentoras e mentoradas? E se a pessoa mentorada estivesse logada? A ideia desse próximo desafio é que você consiga fazer isso!
 
+Imagine que o cadastro de mentoras seja feito por um admin (desafio extra, não precisa se preocupar com isso agora), e que o cadastro da mentorada seja feito por ela mesmo, através de um login. Nesse caso, para uma mentorada selecionar uma mentora, a página do desafio anterior poderia ser apenas a seleção de mentora, com a seleção de mentorada sendo feita automáticamente através da informação do login.
+
+  <img width="350" alt="image" src="https://github.com/user-attachments/assets/be7d824b-5d96-475a-bd39-68283376055d" />
+  <img width="350" alt="image" src="https://github.com/user-attachments/assets/3dd4da77-2f72-41ee-b909-45b8e52761a1" />
+
+
 ### >> Desafio 4: CRUD de habilidades
 Atualmente, as habilidades de uma mentora são um texto corrido (uma string). Seria muito melhor organizado se tivéssemos de fato uma lista de habilidades para elas escolherem (ou criarem novas, caso ainda não exista), não acha?
+
+  <img width="350" alt="image" src="https://github.com/user-attachments/assets/d77b6b95-33aa-454a-88aa-034925faf38c" />
+
 
 ### >> Desafios extras
 Esse projeto pode ir longe!!! Além dos desafios propostos, ainda podemos:
@@ -102,7 +122,7 @@ As demais pessoas do grupo podem acessar o projeto:
 - Dev Container: Reopen in Container
 - No terminal do VSCode, rode:
   - `bundle install`
-  - `bin/dev`
+  - `rails s`
 - Acesse no navegador: http://localhost:3000
 
 ### Via Github Codespaces
