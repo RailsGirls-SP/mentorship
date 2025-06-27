@@ -71,7 +71,7 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   # Extract host from ENV and allow it
-  config.hosts << /.*\.app\.github\.dev/
+  config.hosts.clear
 
   # Disable strict Origin checking (for development only!)
   config.action_controller.forgery_protection_origin_check = false
