@@ -119,6 +119,8 @@ As demais pessoas do grupo podem acessar o projeto:
 
 **Comandos**
 - Clone o repositório em sua máquina
+- Copie o `.devcontainer_example` para `.devcontainer`
+  - `cp -r .devcontainer_example .devcontainer`
 - Dev Container: Reopen in Container
 - No terminal do VSCode, rode:
   - `bundle install`
@@ -133,4 +135,4 @@ As demais pessoas do grupo podem acessar o projeto:
 - Clique em Abrir no Navegador (Open in Browser)
 
 ---
-Idependente do caminho escolhido, para executar os testes da aplicação, rode `rspec`; Para executar o lint, rode `rubocop` ou `rubocop --fix`.
+Independentemente do caminho escolhido, para executar os testes da aplicação, rode `rspec`; Para executar o lint, rode `rubocop` ou `rubocop --fix`.
