@@ -11,7 +11,7 @@ class MenteesController < ApplicationController
       redirect_to mentee_path(@mentee)
     else
       flash[:alert] = "Erro ao criar mentorada. Verifique os dados."
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -34,7 +34,7 @@ class MenteesController < ApplicationController
       redirect_to mentee_path(@mentee)
     else
       flash[:alert] = "Erro ao atualizar mentorada. Verifique os dados."
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -46,13 +46,13 @@ class MenteesController < ApplicationController
       redirect_to mentees_path
     else
       flash[:alert] = "Erro ao deletar mentorada"
-      redirect_to mentee_path(@mentee)
+      redirect_to mentee_path(@mentee), status: :unprocessable_entity
     end
   end
 
   private
 
-    def mentee_params
-      params.expect(mentee: [ :name, :current_title, :current_company, :email, :linkedin_url, :bio ])
-    end
+  def mentee_params
+    params.expect(mentee: [ :name, :current_title, :current_company, :email, :linkedin_url, :bio ])
+  end
 end
