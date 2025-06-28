@@ -73,3 +73,5 @@ yarn-debug.log*
 
 # Ignore .devcontainer directory
 /.devcontainer
+/app/assets/builds/*
+!/app/assets/builds/.keep
