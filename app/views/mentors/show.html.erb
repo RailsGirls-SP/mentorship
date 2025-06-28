@@ -2,9 +2,12 @@
 
 <%= render @mentor %>
 
-<div>
-  <%= link_to "Editar", edit_mentor_path(@mentor) %> |
-  <%= link_to "Listar mentoras", mentors_path %>
-
-  <%= button_to "Deletar", @mentor, method: :delete %>
+<div class="mt-6 flex gap-4 items-center">
+  <div class="flex gap-4 items-center">
+    <%= link_to "Editar", edit_mentor_path(@mentor), class: "inline-block bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2 px-4 rounded transition" %>
+    <%= link_to "Listar mentoras", mentors_path, class: "inline-block bg-zinc-900 hover:bg-zinc-700 text-white font-semibold py-2 px-4 rounded transition" %>
+  </div>
+  <div class="flex-1 flex justify-end">
+    <%= button_to "Deletar", @mentor, method: :delete, class: "inline-block bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition" %>
+  </div>
 </div>
