@@ -4,6 +4,14 @@
 
 <h1>Mentoras</h1>
 
+<%= form_with url: mentors_path, method: :get do |form| %>
+  <%= form.label :query, "Habilidade:" %>
+  <%= form.search_field :query %>
+  <%= form.submit "Buscar" %>
+<% end %>
+<br>
+
+
 <div id="mentors">
   <table border="1" cellpadding="10">
   <thead>
@@ -31,3 +39,9 @@
 </div>
 
 <p><%= link_to "Nova mentora", new_mentor_path %></p>
+
+<%= form_with url: mentorships_path, method: :post do |form| %>
+  <%= form.label :mentor, "Mentora:" %>
+  <%= form.search_field :query %>
+  <%= form.submit "Buscar" %>
+<% end %>

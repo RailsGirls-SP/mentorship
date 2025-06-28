@@ -4,6 +4,7 @@ class MentorsController < ApplicationController
   # GET /mentors or /mentors.json
   def index
     @mentors = Mentor.all
+    @mentors = @mentors.where("mentorship_topics like ?", "%#{params[:query]}%") if params[:query]
   end
 
   # GET /mentors/1 or /mentors/1.json

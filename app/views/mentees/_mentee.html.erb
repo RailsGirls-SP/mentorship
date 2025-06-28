@@ -1,0 +1,32 @@
+<div id="<%= dom_id mentee %>">
+  <p>
+    <strong>Nome:</strong>
+    <%= mentee.name %>
+  </p>
+
+  <p>
+    <strong>Cargo atual:</strong>
+    <%= mentee.current_title %>
+  </p>
+
+  <p>
+    <strong>Empresa atual:</strong>
+    <%= mentee.current_company %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= mentee.email %>
+  </p>
+
+  <p>
+    <strong>Redes sociais:</strong>
+    <td><%= link_to "LinkedIn", safe_url(mentee.linkedin_url), target: "_blank", rel: "noopener" %></td>
+  </p>
+
+  <p>
+    <strong>Bio:</strong>
+    <%= mentee.bio %>
+  </p>
+
+</div>

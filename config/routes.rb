@@ -12,4 +12,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "welcome#index"
+
+  resources :mentees
+
+  resources :mentorships, only: [:create]
 end
