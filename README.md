@@ -123,15 +123,16 @@ As demais pessoas do grupo podem acessar o projeto:
   - `cp -r .devcontainer_example .devcontainer`
 - Dev Container: Reopen in Container
 - No terminal do VSCode, rode:
-  - `bundle install`
-  - `rails s`
+  - bundle install
+  - bin/dev
 - Acesse no navegador: http://localhost:3000
+- Para atualizar o container: Dev Container: Rebuild Container
 
 ### Via Github Codespaces
 - No Github, [crie um codespace](https://github.com/codespaces) a partir da main branch
 - No terminal do codespace, rode:
-  - `bundle install`
-  - `bin/dev`
+  - bundle install
+  - bin/dev
 - Clique em Abrir no Navegador (Open in Browser)
 
 ---
