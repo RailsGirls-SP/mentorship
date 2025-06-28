@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Mentoradas" %>
+
+<h1>Mentoradas</h1>
+
+<div id="mentees">
+  <table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Redes Sociais</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <tbody>
+    <% @mentees.each do |mentee| %>
+      <tr>
+        <td><%= mentee.name %></td>
+        <td><%= mail_to mentee.email, target: "_blank" %></td>
+        <td><%= link_to "LinkedIn", safe_url(mentee.linkedin_url), target: "_blank", rel: "noopener" %></td>
+        <td><%= link_to "Mostrar mais", mentee %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>
+
+<p><%= link_to "Nova mentoradas", new_mentee_path %></p>

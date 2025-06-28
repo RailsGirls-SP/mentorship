@@ -1,0 +1,12 @@
+<% content_for :title, "Editar mentorada" %>
+
+<h1>Editar mentorada</h1>
+
+<%= render "form", mentee: @mentee %>
+
+<br>
+
+<div>
+  <%= link_to "Mostrar", @mentee %> |
+  <%= link_to "Listar mentorada", mentees_path %>
+</div>

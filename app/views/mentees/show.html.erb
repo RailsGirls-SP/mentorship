@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mentee %>
+
+<div>
+  <%= link_to "Editar", edit_mentee_path(@mentee) %> |
+  <%= link_to "Listar mentorada", mentees_path %>
+
+  <%= button_to "Deletar", @mentee, method: :delete %>
+</div>
