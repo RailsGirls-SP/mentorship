@@ -15,6 +15,29 @@ class MenteesController < ApplicationController
     end
   end
 
+  def index
+    @mentees = Mentee.all
+  end
+
+  def show
+    @mentee = Mentee.find(params.expect(:id))
+  end
+
+  def edit
+    @mentee = Mentee.find(params.expect(:id))
+  end
+
+  def update
+    @mentee = Mentee.find(params.expect(:id))
+    if @mentee.update(mentee_params)
+      flash[:notice] = "Mentorada atualizada com sucesso!"
+      redirect_to mentee_path(@mentee)
+    else
+      flash[:alert] = "Erro ao atualizar mentorada. Verifique os dados."
+      render :edit
+    end
+  end
+
   private
 
     def mentee_params
