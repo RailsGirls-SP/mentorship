@@ -1,0 +1,12 @@
+<% content_for :title, "Editar aluna" %>
+
+<h1>Editar aluna</h1>
+
+<%= render "form", mentee: @mentee %>
+
+<br>
+
+<div>
+  <%= link_to "Mostrar", @mentee %> |
+  <%= link_to "Listar aluna", mentees_path %>
+</div>
