@@ -38,6 +38,18 @@ class MenteesController < ApplicationController
     end
   end
 
+  def destroy
+    @mentee = Mentee.find(params.expect(:id))
+
+    if @mentee.destroy
+      flash[:notice] = "Mentorada removida com sucesso!"
+      redirect_to mentees_path
+    else
+      flash[:alert] = "Erro ao deletar mentorada"
+      redirect_to mentee_path(@mentee)
+    end
+  end
+
   private
 
     def mentee_params
