@@ -1,0 +1,10 @@
+<% content_for :title, "Mentoradas" %>
+<ul>
+    <% @mentees.each do |mentee| %>
+    <li> 
+        <%= link_to mentee.name, edit_mentee_path(mentee) %>
+    </li> 
+    <% end %>
+</ul>
+
+<%= link_to "novo", new_mentee_path %>

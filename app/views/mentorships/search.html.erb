@@ -1,0 +1,10 @@
+<% @results.each do |mentor| %>
+  <li>
+    <%= button_to "Conectar", mentee_mentorships_path(@mentee, mentor_id: mentor), method: :post %>
+    <p>Topics: <%= mentor.mentorship_topics %></p>
+    <p>name: <%= mentor.name %></p>
+
+
+
+    </li>
+<% end %>
