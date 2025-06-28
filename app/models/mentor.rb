@@ -12,4 +12,9 @@ class Mentor < ApplicationRecord
   validates :linkedin_url,
     format: /\A(http:\/\/|https:\/\/)?(www\.)?linkedin\.com\/[a-zA-Z0-9_\-\/]+\z/,
     allow_blank: true
+    
+  has_many :mentorships
+  has_many :mentees, through: :mentorships
+
 end
+
