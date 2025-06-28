@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+  <p class="text-green-700 font-semibold mb-4"><%= notice %></p>
+<% end %>
 
-<%= render @mentor %>
-
-<div>
-  <%= link_to "Editar", edit_mentor_path(@mentor) %> |
-  <%= link_to "Listar mentoras", mentors_path %>
-
-  <%= button_to "Deletar", @mentor, method: :delete %>
+<div class="max-w-xl mx-auto bg-white/90 rounded-lg shadow p-8 mt-10">
+  <%= render @mentor %>
+  <div class="mt-6 flex gap-4">
+    <%= link_to "Editar", edit_mentor_path(@mentor), class: "bg-[#7B1E12] text-white px-4 py-2 rounded hover:bg-[#5a140c] focus:outline-none focus:ring-2 focus:ring-[#7B1E12] focus:ring-offset-2 transition" %>
+    <%= link_to "Listar mentoras", mentors_path, class: "bg-black text-white px-4 py-2 rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition" %>
+    <%= button_to "Deletar", @mentor, method: :delete, data: { confirm: "Tem certeza?" }, class: "bg-red-700 text-white px-4 py-2 rounded hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2 transition" %>
+  </div>
 </div>

@@ -1,9 +1,8 @@
-<%= form_with(model: mentor) do |form| %>
+<%= form_with(model: mentor, class: "space-y-4") do |form| %>
   <% if mentor.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(mentor.errors.count, "error") %> prohibited this mentor from being saved:</h2>
-
-      <ul>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+      <h2 class="font-bold"><%= pluralize(mentor.errors.count, "erro") %> impediram o salvamento:</h2>
+      <ul class="list-disc list-inside">
         <% mentor.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -12,57 +11,55 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" do %>
-      <strong>Nome:</strong> <small>(obrigatório)</small>
+    <%= form.label :name, class: "block font-semibold text-[#7B1E12]" do %>
+      Nome: <small class="text-gray-500">(obrigatório)</small>
     <% end %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "mt-1 block w-full rounded border-gray-300 focus:border-[#7B1E12] focus:ring-[#7B1E12]" %>
   </div>
 
   <div>
-    <%= form.label :current_title, style: "display: block" do %>
-      <strong>Cargo atual:</strong>
+    <%= form.label :current_title, class: "block font-semibold text-[#7B1E12]" do %>
+      Cargo atual:
     <% end %>
-    <%= form.text_field :current_title %>
+    <%= form.text_field :current_title, class: "mt-1 block w-full rounded border-gray-300 focus:border-[#7B1E12] focus:ring-[#7B1E12]" %>
   </div>
 
   <div>
-    <%= form.label :current_company, style: "display: block" do %>
-      <strong>Empresa atual:</strong>
+    <%= form.label :current_company, class: "block font-semibold text-[#7B1E12]" do %>
+      Empresa atual:
     <% end %>
-    <%= form.text_field :current_company %>
+    <%= form.text_field :current_company, class: "mt-1 block w-full rounded border-gray-300 focus:border-[#7B1E12] focus:ring-[#7B1E12]" %>
   </div>
 
   <div>
-    <%= form.label :email, style: "display: block" do %>
-      <strong>Email:</strong> <small>(obrigatório)</small>
+    <%= form.label :email, class: "block font-semibold text-[#7B1E12]" do %>
+      Email: <small class="text-gray-500">(obrigatório)</small>
     <% end %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "mt-1 block w-full rounded border-gray-300 focus:border-[#7B1E12] focus:ring-[#7B1E12]" %>
   </div>
 
   <div>
-    <%= form.label :linkedin_url, style: "display: block" do %>
-      <strong>URL do LinkedIn:</strong>
+    <%= form.label :linkedin_url, class: "block font-semibold text-[#7B1E12]" do %>
+      URL do LinkedIn:
     <% end %>
-    <%= form.text_field :linkedin_url %>
+    <%= form.text_field :linkedin_url, class: "mt-1 block w-full rounded border-gray-300 focus:border-[#7B1E12] focus:ring-[#7B1E12]" %>
   </div>
 
   <div>
-    <%= form.label :bio, style: "display: block" do %>
-      <strong>Mini-bio:</strong>
+    <%= form.label :bio, class: "block font-semibold text-[#7B1E12]" do %>
+      Mini-bio:
     <% end %>
-    <%= form.textarea :bio %>
+    <%= form.text_area :bio, class: "mt-1 block w-full rounded border-gray-300 focus:border-[#7B1E12] focus:ring-[#7B1E12]" %>
   </div>
 
   <div>
-    <%= form.label :mentorship_topics, style: "display: block" do %>
-      <strong>Tópicos de mentoria:</strong>
-      <small>(separe cada tópico com vírgulas)</small>
+    <%= form.label :mentorship_topics, class: "block font-semibold text-[#7B1E12]" do %>
+      Tópicos de mentoria: <small class="text-gray-500">(separe cada tópico com vírgulas)</small>
     <% end %>
-
-    <%= form.textarea :mentorship_topics %>
+    <%= form.text_area :mentorship_topics, class: "mt-1 block w-full rounded border-gray-300 focus:border-[#7B1E12] focus:ring-[#7B1E12]" %>
   </div>
 
   <div>
-    <%= form.submit "Salvar" %>
+    <%= form.submit "Salvar", class: "bg-[#7B1E12] text-white px-4 py-2 rounded hover:bg-[#5a140c] focus:outline-none focus:ring-2 focus:ring-[#7B1E12] focus:ring-offset-2 transition" %>
   </div>
 <% end %>

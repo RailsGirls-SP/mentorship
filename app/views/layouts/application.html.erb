@@ -23,10 +23,13 @@
   </head>
 
   <body>
-    <header class="bg-[#7B1E12] text-white py-8 text-center">
-      <h1 class="text-4xl font-bold mb-2" style="font-family: cursive;">Rails Girls</h1>
-      <h2 class="text-2xl font-semibold mb-1">EDIÇÃO EVOLUÇÃO</h2>
-      <p class="text-lg mt-2"><span class="font-bold text-black text-3xl">28</span> DE JUNHO <span class="text-gray-200">Das 9h até 20h | Smart Fit</span></p>
+    <header class="bg-[#7B1E12] text-white text-sm py-2 px-4 flex items-center justify-center gap-4">
+      <%= link_to root_path, class: "font-bold tracking-wide hover:underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded transition px-1" do %>
+        Rails Girls
+      <% end %>
+      <span class="font-semibold">Edição Evolução</span>
+      <span class="font-bold text-black bg-white rounded px-2 py-0.5">28 de Junho</span>
+      <span class="text-gray-200">9h-20h | Smart Fit</span>
     </header>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>

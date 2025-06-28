@@ -1,33 +1,38 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+  <p class="text-green-700 font-semibold mb-4 text-center"><%= notice %></p>
+<% end %>
 
 <% content_for :title, "Mentoras" %>
 
-<h1>Mentoras</h1>
-
-<div id="mentors">
-  <table border="1" cellpadding="10">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Redes Sociais</th>
-      <th>Tópicos de Mentoria</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <tbody>
-    <% @mentors.each do |mentor| %>
-      <tr>
-        <td><%= mentor.name %></td>
-        <td><%= mail_to mentor.email, target: "_blank" %></td>
-        <td><%= link_to "LinkedIn", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener" %></td>
-        <td><%= format_mentorship_topics(mentor.mentorship_topics) %></td>
-        <td><%= link_to "Mostrar mais", mentor %></td>
-      </tr>
-    <% end %>
-  </tbody>
-  </table>
+<div class="flex flex-col items-center w-full max-w-5xl mx-auto">
+  <h1 class="text-xl font-bold text-[#7B1E12] mb-8 text-center w-full">Mentoras</h1>
+  <div class="overflow-x-auto w-full mb-8">
+    <table class="min-w-full bg-white/90 rounded-lg shadow divide-y divide-gray-200">
+      <thead>
+        <tr class="bg-[#7B1E12] text-white">
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Nome</th>
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Email</th>
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">LinkedIn</th>
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Tópicos</th>
+          <th scope="col" class="px-6 py-3"></th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100">
+        <% @mentors.each do |mentor| %>
+          <tr class="hover:bg-gray-50 focus-within:bg-gray-100">
+            <td class="px-6 py-4 whitespace-nowrap font-semibold text-[#7B1E12]"> <%= mentor.name %> </td>
+            <td class="px-6 py-4 whitespace-nowrap"><%= mail_to mentor.email, target: "_blank", class: "underline text-blue-700" %></td>
+            <td class="px-6 py-4 whitespace-nowrap"><%= link_to "Perfil", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener", class: "underline text-blue-700" %></td>
+            <td class="px-6 py-4 whitespace-nowrap"><%= format_mentorship_topics(mentor.mentorship_topics) %></td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <%= link_to "Mostrar mais", mentor, class: "bg-[#7B1E12] text-white px-3 py-1 rounded text-xs hover:bg-[#5a140c] focus:outline-none focus:ring-2 focus:ring-[#7B1E12] focus:ring-offset-2 transition" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex justify-center w-full mb-4">
+    <%= link_to "Nova mentora", new_mentor_path, class: "bg-black text-white px-4 py-2 rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition" %>
+  </div>
 </div>
-
-<p><%= link_to "Nova mentora", new_mentor_path %></p>

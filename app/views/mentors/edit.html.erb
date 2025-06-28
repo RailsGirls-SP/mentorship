@@ -1,12 +1,10 @@
 <% content_for :title, "Editar mentora" %>
 
-<h1>Editar mentora</h1>
-
-<%= render "form", mentor: @mentor %>
-
-<br>
-
-<div>
-  <%= link_to "Mostrar", @mentor %> |
-  <%= link_to "Listar mentoras", mentors_path %>
+<div class="max-w-xl mx-auto bg-white/90 rounded-lg shadow p-8 mt-10">
+  <h1 class="text-xl font-bold text-[#7B1E12] mb-6">Editar mentora</h1>
+  <%= render "form", mentor: @mentor %>
+  <div class="mt-6 flex gap-4">
+    <%= link_to "Mostrar", @mentor, class: "bg-black text-white px-4 py-2 rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition" %>
+    <%= link_to "Listar mentoras", mentors_path, class: "bg-[#7B1E12] text-white px-4 py-2 rounded hover:bg-[#5a140c] focus:outline-none focus:ring-2 focus:ring-[#7B1E12] focus:ring-offset-2 transition" %>
+  </div>
 </div>
