@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_25_011457) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_28_022058) do
+  create_table "mentees", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.string "cargo_atual"
+    t.string "empresa_atual"
+    t.text "mini_bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "mentors", force: :cascade do |t|
     t.string "name"
     t.string "current_title"

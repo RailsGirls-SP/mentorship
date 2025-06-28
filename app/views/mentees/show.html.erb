@@ -1,0 +1,27 @@
+<h1 style="font-weight: bold; font-size: 3em; margin-bottom: 1em;">Mentorada</h1>
+
+<div style="font-size: 2em; margin-bottom: 2em;">
+  <div style="margin-bottom: 0.5em;">
+    <span style="font-weight: bold;">Nome:</span>
+    <span style="margin-left: 1em;"> <%= @mentee.nome %> </span>
+  </div>
+  <div style="margin-bottom: 0.5em;">
+    <span style="font-weight: bold;">Email:</span>
+    <span style="margin-left: 1em;"> <%= @mentee.email %> </span>
+  </div>
+  <div style="margin-bottom: 0.5em;">
+    <span style="font-weight: bold;">Cargo atual:</span>
+    <span style="margin-left: 1em;"> <%= @mentee.cargo_atual %> </span>
+  </div>
+  <div style="margin-bottom: 0.5em;">
+    <span style="font-weight: bold;">Empresa atual:</span>
+    <span style="margin-left: 1em;"> <%= @mentee.empresa_atual %> </span>
+  </div>
+  <div style="margin-bottom: 0.5em;">
+    <span style="font-weight: bold;">Mini-bio:</span>
+    <span style="margin-left: 1em;"> <%= @mentee.mini_bio %> </span>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_mentee_path(@mentee), style: 'font-size: 1.5em; color: #2346c7; text-decoration: underline; margin-right: 1em;' %>
+<%= link_to 'Excluir', @mentee, method: :delete, data: { confirm: 'Tem certeza?' }, style: 'font-size: 1.5em; color: #2346c7; text-decoration: underline;' %>

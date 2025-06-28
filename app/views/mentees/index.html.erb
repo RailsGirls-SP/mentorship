@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Mentees" %>
+
+<h1 style="font-weight: bold; font-size: 3em; margin-bottom: 1em;">Mentoradas</h1>
+
+<% @mentees.each do |mentee| %>
+  <div style="margin-bottom: 1.5em;">
+    <span style="font-size: 2em; margin-right: 2em;"> <%= mentee.nome %> </span>
+    <%= link_to 'mostrar', mentee, style: 'font-size: 1.5em; margin-right: 1em;' %>
+    <%= link_to 'excluir', mentee, method: :delete, data: { confirm: 'Tem certeza?' }, style: 'font-size: 1.5em; margin-right: 1em;' %>
+    <%= link_to 'editar', edit_mentee_path(mentee), style: 'font-size: 1.5em;' %>
+  </div>
+<% end %>
+
+<%= link_to 'Nova Mentorada', new_mentee_path, style: 'font-size: 2em; text-decoration: underline; color: #2346c7;' %>

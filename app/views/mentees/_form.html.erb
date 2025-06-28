@@ -1,0 +1,41 @@
+<%= form_with(model: mentee) do |form| %>
+  <% if mentee.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(mentee.errors.count, "erro") %> impediram o salvamento:</h2>
+      <ul>
+        <% mentee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="margin-bottom: 1em;">
+    <label style="font-size: 2em; font-weight: bold; margin-right: 1em;">Nome:</label>
+    <%= form.text_field :nome, style: 'width: 400px; height: 2em; font-size: 1.5em;' %>
+  </div>
+
+  <div style="margin-bottom: 1em;">
+    <label style="font-size: 2em; font-weight: bold; margin-right: 1em;">Email:</label>
+    <%= form.text_field :email, style: 'width: 400px; height: 2em; font-size: 1.5em;' %>
+  </div>
+
+  <div style="margin-bottom: 1em;">
+    <label style="font-size: 2em; font-weight: bold; margin-right: 1em;">Cargo atual:</label>
+    <%= form.text_field :cargo_atual, style: 'width: 400px; height: 2em; font-size: 1.5em;' %>
+  </div>
+
+  <div style="margin-bottom: 1em;">
+    <label style="font-size: 2em; font-weight: bold; margin-right: 1em;">Empresa atual:</label>
+    <%= form.text_field :empresa_atual, style: 'width: 400px; height: 2em; font-size: 1.5em;' %>
+  </div>
+
+  <div style="margin-bottom: 2em;">
+    <label style="font-size: 2em; font-weight: bold; margin-right: 1em; vertical-align: top;">Mini-bio:</label>
+    <%= form.text_area :mini_bio, style: 'width: 600px; height: 100px; font-size: 1.3em;' %>
+  </div>
+
+  <div>
+    <%= form.submit 'Salvar', style: 'font-size: 2em; color: #2346c7; background: none; border: none; text-decoration: underline; cursor: pointer;' %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<% content_for :title, "New mentee" %>
+
+<h1 style="font-weight: bold; font-size: 3em; margin-bottom: 1em;">Nova Mentorada</h1>
+
+<%= render "form", mentee: @mentee %>
+
+<br>
+
+<div>
+  <%= link_to "Back to mentees", mentees_path %>
+</div>
