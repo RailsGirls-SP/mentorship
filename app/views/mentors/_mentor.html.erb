@@ -21,7 +21,11 @@
 
   <p>
     <strong>Redes sociais:</strong>
-    <td><%= link_to "LinkedIn", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener" %></td>
+      <% if mentor.linkedin_url.present? %>
+    <td>
+    <%= link_to "LinkedIn", safe_url(mentor.linkedin_url), target: "_blank", rel: "noopener" %>
+    </td>
+      <% end %>
   </p>
 
   <p>
