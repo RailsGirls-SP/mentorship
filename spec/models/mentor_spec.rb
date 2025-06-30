@@ -28,7 +28,8 @@ RSpec.describe Mentor, type: :model do
   [
     { input: "linkedin.com/mentorax", expected: "linkedin.com/mentorax", desc: "already formatted" },
     { input: "  linkedin   .com/ mentorax  ", expected: "linkedin.com/mentorax", desc: "extra spaces" },
-    { input: "liNKEDin .COM/mentoraX", expected: "linkedin.com/mentorax", desc: "upcased" }
+    { input: "liNKEDin .COM/mentoraX", expected: "linkedin.com/mentorax", desc: "upcased" },
+    { input: "", expected: nil, desc: "blank input becomes nil" }
   ].each do |tc|
     it "normalizes linkedin url: #{tc[:desc]}" do
       mentor = described_class.new(linkedin_url: tc[:input])
