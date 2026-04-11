@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_25_011457) do
+ActiveRecord::Schema[8.0].define(version: 2026_04_11_185909) do
+  create_table "mentees", force: :cascade do |t|
+    t.string "name"
+    t.string "current_title"
+    t.string "current_company"
+    t.string "email"
+    t.string "linkedin_url"
+    t.text "bio"
+    t.text "mentorship_topics"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+ActiveRecord::Schema[8.0].define(version: 2026_04_11_160046) do
   create_table "mentors", force: :cascade do |t|
     t.string "name"
     t.string "current_title"
@@ -22,5 +35,41 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_25_011457) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_mentors_on_email", unique: true
+  end
+
+  create_table "mentors_stacks", id: false, force: :cascade do |t|
+    t.integer "mentor_id", null: false
+    t.integer "stack_id", null: false
+  end
+
+  create_table "mentorships", force: :cascade do |t|
+    t.integer "mentor_id", null: false
+    t.integer "mentee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mentee_id"], name: "index_mentorships_on_mentee_id"
+    t.index ["mentor_id"], name: "index_mentorships_on_mentor_id"
+  end
+
+  create_table "stacks", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "doc_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "mentorships", "mentees"
+  add_foreign_key "mentorships", "mentors"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "current_title"
+    t.string "current_company"
+    t.string "linkedin_url"
+    t.string "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 end
