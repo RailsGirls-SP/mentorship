@@ -10,7 +10,7 @@ Nesta edição do Rails Girls São Paulo, vamos criar um projeto de mentoria. Ne
 A ideia maior é que possamos ter uma listagem de mentoras, cada uma com suas habilidades; que seja possível buscar mentoras por essas habilidades; e, por fim, que mentoradas possam escolher mentoras que façam sentido para elas.
 
 ## Durante o evento
-As participantes do Rails Girls SP 2025 serão divididas em equipes de até 5 pessoas (participantes e mentoras). A ideia é que vocês evoluam em time o máximo possível desse projeto.
+As participantes do Rails Girls SP 2026 serão divididas em equipes de até 5 pessoas (participantes e mentoras). A ideia é que vocês evoluam em time o máximo possível desse projeto.
 
 Sua equipe pode se organizar como achar melhor, mas sugerimos que façam alguma divisão de tarefas que podem ser paralelizáveis e pareamentos para as que não podem.
 
