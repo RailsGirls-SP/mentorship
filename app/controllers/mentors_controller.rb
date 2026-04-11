@@ -3,7 +3,13 @@ class MentorsController < ApplicationController
 
   # GET /mentors or /mentors.json
   def index
-    @mentors = Mentor.all
+    @stacks = Stack.all
+    @mentees = Mentee.all
+    @mentors = if params[:stack_id].present?
+                 Stack.find(params[:stack_id]).mentors
+               else
+                 Mentor.all
+               end
   end
 
   # GET /mentors/1 or /mentors/1.json
